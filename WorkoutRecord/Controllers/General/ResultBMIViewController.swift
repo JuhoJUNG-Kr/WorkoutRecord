@@ -9,21 +9,37 @@ import UIKit
 
 class ResultBMIViewController: UIViewController {
 
+    @IBOutlet weak var bmiNumberLabel: UILabel!
+    
+    @IBOutlet weak var adviceLabel: UILabel!
+    
+    @IBOutlet weak var backButton: UIButton!
+    
+    var bmi: BMI?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureUI()
     }
     
+    func configureUI() {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        bmiNumberLabel.text = "\(bmi!.value)"
+        bmiNumberLabel.backgroundColor = bmi?.matchColor
+        adviceLabel.text = bmi?.advice
+        
+        bmiNumberLabel.clipsToBounds = true
+        bmiNumberLabel.layer.cornerRadius = 8
+        
+        backButton.clipsToBounds = true
+        backButton.layer.cornerRadius = 5
+        backButton.layer.borderColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        backButton.layer.borderWidth = 1
     }
-    */
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
 
 }
