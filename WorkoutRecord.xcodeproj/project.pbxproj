@@ -10,6 +10,8 @@
 		2A8D1BED2A6F43ED22F88EB4 /* Pods_WorkoutRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE89B2978EC5A2DCDCC27C5 /* Pods_WorkoutRecord.framework */; };
 		5B37437E2937BA1C0087F54E /* ResultSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B37437D2937BA1C0087F54E /* ResultSettingViewController.swift */; };
 		5B3743802937C3970087F54E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B37437F2937C3970087F54E /* SettingViewController.swift */; };
+		5B4227012939189C00EC1DF9 /* RM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4227002939189C00EC1DF9 /* RM.swift */; };
+		5B42270329391A3C00EC1DF9 /* RMCalculatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42270229391A3C00EC1DF9 /* RMCalculatorManager.swift */; };
 		5B7D0E95293149C000979FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0E94293149C000979FDF /* AppDelegate.swift */; };
 		5B7D0E97293149C000979FDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0E96293149C000979FDF /* SceneDelegate.swift */; };
 		5B7D0E99293149C000979FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D0E98293149C000979FDF /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		5B37437D2937BA1C0087F54E /* ResultSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultSettingViewController.swift; sourceTree = "<group>"; };
 		5B37437F2937C3970087F54E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5B4227002939189C00EC1DF9 /* RM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RM.swift; sourceTree = "<group>"; };
+		5B42270229391A3C00EC1DF9 /* RMCalculatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCalculatorManager.swift; sourceTree = "<group>"; };
 		5B7D0E91293149C000979FDF /* WorkoutRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7D0E94293149C000979FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B7D0E96293149C000979FDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B4226FF2939187300EC1DF9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5B7D0EB8293155BA00979FDF /* CoreDataManager.swift */,
+				5B7D0EB029314D1900979FDF /* WorkoutManager.swift */,
+				5BED048229367F55006DA8AF /* BMICalculatorManager.swift */,
+				5B42270229391A3C00EC1DF9 /* RMCalculatorManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		5B7D0E88293149C000979FDF = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +123,7 @@
 				5B7D0E94293149C000979FDF /* AppDelegate.swift */,
 				5B7D0E96293149C000979FDF /* SceneDelegate.swift */,
 				5B7D0EBC293155D800979FDF /* Models */,
+				5B4226FF2939187300EC1DF9 /* Managers */,
 				5B7D0EBB293155D100979FDF /* Views */,
 				5B7D0EBA293155C700979FDF /* Controllers */,
 				5B7D0EA0293149C100979FDF /* Assets.xcassets */,
@@ -143,10 +159,8 @@
 				5B7D0EAD29314CE400979FDF /* Workout.swift */,
 				5B7D0EB42931557800979FDF /* RecordData+CoreDataClass.swift */,
 				5B7D0EB52931557800979FDF /* RecordData+CoreDataProperties.swift */,
-				5B7D0EB029314D1900979FDF /* WorkoutManager.swift */,
-				5B7D0EB8293155BA00979FDF /* CoreDataManager.swift */,
 				5BED048029367F30006DA8AF /* BMI.swift */,
-				5BED048229367F55006DA8AF /* BMICalculatorManager.swift */,
+				5B4227002939189C00EC1DF9 /* RM.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -303,6 +317,7 @@
 				5B7D0EC029315A8900979FDF /* RecordTableViewCell.swift in Sources */,
 				5BED048329367F55006DA8AF /* BMICalculatorManager.swift in Sources */,
 				5B7D0EB72931557800979FDF /* RecordData+CoreDataProperties.swift in Sources */,
+				5B42270329391A3C00EC1DF9 /* RMCalculatorManager.swift in Sources */,
 				5B7D0EAC29314C0E00979FDF /* WorkoutCell.swift in Sources */,
 				5B7D0EB3293150E800979FDF /* RecordViewController.swift in Sources */,
 				5B7D0EB62931557800979FDF /* RecordData+CoreDataClass.swift in Sources */,
@@ -311,6 +326,7 @@
 				5B7D0E95293149C000979FDF /* AppDelegate.swift in Sources */,
 				5BED047D29366730006DA8AF /* TimerViewController.swift in Sources */,
 				5B7D0E97293149C000979FDF /* SceneDelegate.swift in Sources */,
+				5B4227012939189C00EC1DF9 /* RM.swift in Sources */,
 				5BED048129367F30006DA8AF /* BMI.swift in Sources */,
 				5B3743802937C3970087F54E /* SettingViewController.swift in Sources */,
 				5B7D0EAE29314CE400979FDF /* Workout.swift in Sources */,

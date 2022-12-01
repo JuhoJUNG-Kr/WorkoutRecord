@@ -8,28 +8,33 @@
 
 import UIKit
 
+protocol sendDataDelegate: AnyObject {
+    func mexWeight(bpText: String, dlText: String, mpText: String, sqText: String, bcText: String)
+    func weightchage(bool : Bool)
+}
 
 class ResultSettingViewController: UIViewController {
     
+    weak var delegate: sendDataDelegate?
+    
     @IBOutlet weak var kgOrLbsSegment: UISegmentedControl!
-    
     @IBOutlet var kgOrLbsLabels: [UILabel]!
-    
     @IBOutlet weak var repsTextField: UITextField!
-    
     @IBOutlet weak var weightTextField: UITextField!
-    
     @IBOutlet weak var rmResultLabel: UILabel!
-    
     @IBOutlet weak var saveButton: UIButton!
+        
+    @IBOutlet weak var bpTf: UITextField!
+    @IBOutlet weak var dlTf: UITextField!
+    @IBOutlet weak var mpTf: UITextField!
+    @IBOutlet weak var sqTf: UITextField!
+    @IBOutlet weak var bcTf: UITextField!
     
-    var viewTopConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        repsTextField.delegate = self
-        weightTextField.delegate = self
+        configureUI()
     }
     
     func configureUI() {
@@ -52,6 +57,19 @@ class ResultSettingViewController: UIViewController {
 
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        self.delegate?.mexWeight(bpText: self.bpTf.text ?? "",
+                                 dlText: self.dlTf.text ?? "",
+                                 mpText: self.mpTf.text ?? "",
+                                 sqText: self.sqTf.text ?? "",
+                                 bcText: self.bcTf.text ?? "")
+        
+        if kgOrLbsSegment.selectedSegmentIndex == 0 {
+            self.delegate?.weightchage(bool: true)
+        } else if kgOrLbsSegment.selectedSegmentIndex == 1{
+            self.delegate?.weightchage(bool: false)
+        }
+
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -61,6 +79,6 @@ class ResultSettingViewController: UIViewController {
 
 }
 
-extension ResultSettingViewController: UITextFieldDelegate {
-    
-}
+//extension ResultSettingViewController: UITextFieldDelegate {
+//
+//}

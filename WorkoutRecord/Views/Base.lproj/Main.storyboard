@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uzx-cg-3Nn">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="155" width="393" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" rowHeight="138" id="EPu-NT-vvi" customClass="WorkoutCell" customModule="WorkoutRecord" customModuleProvider="target">
@@ -191,6 +191,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="joj-5T-elM"/>
                                                 </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -211,6 +212,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="fWA-ai-HT5"/>
                                                 </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -479,7 +481,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Setting" id="ro1-4Y-76p"/>
                     <connections>
+                        <outlet property="bcLabel" destination="fSg-UW-e05" id="Gsc-vl-Us5"/>
+                        <outlet property="bpLabel" destination="h34-2y-WlJ" id="g4b-eJ-mUm"/>
                         <outlet property="calculateButton" destination="PgN-Uz-fm2" id="vX9-dg-vqF"/>
+                        <outlet property="dlLabel" destination="uNg-Jd-6AS" id="AVg-3A-UzQ"/>
+                        <outlet property="mpLabel" destination="AD2-6k-4Yz" id="q3Q-vs-Bmm"/>
+                        <outlet property="sqLabel" destination="hg6-BT-1dI" id="5v2-KF-b4y"/>
+                        <outletCollection property="kgOrLbsLabels" destination="aKq-yO-Dbg" collectionClass="NSMutableArray" id="fjp-WN-dUJ"/>
+                        <outletCollection property="kgOrLbsLabels" destination="Sht-pj-Bxx" collectionClass="NSMutableArray" id="rpB-8R-mXB"/>
+                        <outletCollection property="kgOrLbsLabels" destination="Egb-nt-k7i" collectionClass="NSMutableArray" id="exx-QT-vH6"/>
+                        <outletCollection property="kgOrLbsLabels" destination="EXp-wE-Iax" collectionClass="NSMutableArray" id="sHJ-Bi-Xyq"/>
+                        <outletCollection property="kgOrLbsLabels" destination="54Y-Ze-jqR" collectionClass="NSMutableArray" id="gz7-H9-MNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVF-MM-yw9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -801,10 +813,15 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ADP-4k-4eR"/>
                     <connections>
+                        <outlet property="bcTf" destination="gdp-o5-AXL" id="gzn-WT-fdu"/>
+                        <outlet property="bpTf" destination="BXg-tI-j1W" id="uaM-VY-TzR"/>
+                        <outlet property="dlTf" destination="ptK-Aj-d9d" id="D3n-NI-vZP"/>
                         <outlet property="kgOrLbsSegment" destination="ggY-89-akf" id="USH-lk-2NC"/>
+                        <outlet property="mpTf" destination="B4c-nA-KMx" id="Tx1-qY-xdb"/>
                         <outlet property="repsTextField" destination="Ttc-S3-K23" id="j3I-7f-6gL"/>
                         <outlet property="rmResultLabel" destination="jfj-S5-gJc" id="AqE-vE-pSg"/>
                         <outlet property="saveButton" destination="cqi-cY-WI9" id="oep-7q-qVs"/>
+                        <outlet property="sqTf" destination="Ny9-tl-V3q" id="j8v-SA-cV9"/>
                         <outlet property="weightTextField" destination="rTx-X0-L6W" id="bzS-Lp-m2t"/>
                         <outletCollection property="kgOrLbsLabels" destination="d2V-Wd-yqL" collectionClass="NSMutableArray" id="FVp-UI-nFn"/>
                         <outletCollection property="kgOrLbsLabels" destination="Z0v-WH-SOU" collectionClass="NSMutableArray" id="9AK-Gm-Vwb"/>
