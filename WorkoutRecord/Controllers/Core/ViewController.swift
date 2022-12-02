@@ -17,6 +17,7 @@ public enum Section: Int {
 
 class ViewController: UIViewController {
     
+    var isLoggedIn = false
     
     @IBOutlet weak var mainTableView: UITableView!
     let sectionTitles: [String] = ["Chest", "Back", "Shoulders", "Legs", "Arms"]
@@ -24,8 +25,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLogin()
         mainTableView.dataSource = self
         mainTableView.rowHeight = 120
+    }
+    
+    func setupLogin() {
+        if !isLoggedIn {
+            let vc = LoginViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false, completion: nil)
+        }
     }
 
 

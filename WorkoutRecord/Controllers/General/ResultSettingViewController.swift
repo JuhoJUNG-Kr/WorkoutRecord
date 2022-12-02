@@ -34,6 +34,8 @@ class ResultSettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        repsTextField.delegate = self
+        weightTextField.delegate = self
         configureUI()
     }
     
@@ -72,13 +74,17 @@ class ResultSettingViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
-    
 
 }
 
-//extension ResultSettingViewController: UITextFieldDelegate {
-//
-//}
+extension ResultSettingViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if repsTextField.text != "" || weightTextField.text != "" {
+            guard let r = Double(repsTextField.text!), let w = Double(weightTextField.text!) else {
+                return
+            }
+            var rmNum = w + (w * r * 0.025)
+            rmResultLabel.text = String(rmNum)
+        }
+    }
+}
